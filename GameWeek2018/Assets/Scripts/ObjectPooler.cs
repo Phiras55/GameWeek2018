@@ -24,7 +24,7 @@ public class ObjectPooler : MonoBehaviour {
         }
     }
 
-    void Start ()
+    void Awake ()
     {
         if (!pool)
         {

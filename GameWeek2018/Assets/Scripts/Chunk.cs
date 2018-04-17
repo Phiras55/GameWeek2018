@@ -5,7 +5,7 @@ public class Chunk : MonoBehaviour
 {
     [Header("Entry and Exit Points")]
     [SerializeField] private Transform entryPoint;
-    [SerializeField] private Transform exitPoint;
+    [SerializeField] public Transform exitPoint;
 
     [Header("Obstacles")]
     [SerializeField] private bool           generateObstacles;
@@ -34,6 +34,10 @@ public class Chunk : MonoBehaviour
 
     public void InitAndPlace(Transform lastChunkExitPoint)
     {
-        
+        Vector3 dirToExit = (lastChunkExitPoint.position - lastChunkExitPoint.root.position).normalized;
+
+        transform.position = lastChunkExitPoint.position + dirToExit * (entryPoint.position + transform.position).magnitude;
+
+        transform.rotation = Quaternion.LookRotation(dirToExit);
     }
 }
