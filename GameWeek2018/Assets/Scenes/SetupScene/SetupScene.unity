@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 149635209}
   - component: {fileID: 149635208}
   - component: {fileID: 149635207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,13 +347,16 @@ MonoBehaviour:
   maxSpeed: 100
   strafeDistance: 10
   strafeSpeed: 10
+  colMinHeight: 0
+  jumpForce: 15
+  gravityMultiplier: 0.5
 --- !u!23 &149635209
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 149635205}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -646,7 +649,7 @@ GameObject:
   - component: {fileID: 755906274}
   - component: {fileID: 755906273}
   - component: {fileID: 755906272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1069,7 +1072,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 986605697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reference
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
