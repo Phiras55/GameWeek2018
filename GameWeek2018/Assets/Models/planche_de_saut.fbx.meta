@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: dbbb274ee87dee04b8591c463f9e07bb
-timeCreated: 1523985991
+guid: 269881a18aedeca47b1a2d9e36bace17
+timeCreated: 1523988023
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: planche_de_saut1
     400000: //RootNode
-    400002: planche_de_saut1
     2100000: rouge
-    2300000: planche_de_saut1
-    3300000: planche_de_saut1
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: planche_de_saut1
   externalObjects: {}
   materials:

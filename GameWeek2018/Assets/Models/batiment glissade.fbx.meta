@@ -1,16 +1,17 @@
 fileFormatVersion: 2
-guid: 8f7aaee9b55033b498543edd8c4e1cfd
-timeCreated: 1523988024
+guid: 8313ba0ca56ff604194c6b36f3106e6e
+timeCreated: 1523988023
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: blanc
+    2100000: lambert3
     2300000: //RootNode
     3300000: //RootNode
-    4300000: panneau_pub
+    4300000: Batiment_gliassade
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -85,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
