@@ -47,9 +47,12 @@ public class PlayerMovement : MonoBehaviour
     {
         IncrementSpeed();
 
-        targetPos += transform.position + (transform.forward.normalized * (currentLane * Time.deltaTime));
-        //transform.position = transform.position + transform.forward.normalized * currentSpeed * Time.deltaTime;
+        //targetPos += transform.position + (transform.forward.normalized * (currentLane * Time.deltaTime));
+        transform.position = transform.position + transform.forward.normalized * currentSpeed * Time.deltaTime;
+
         //Debug.Log("Speederu! " + currentSpeed);
+
+        //transform.position = targetPos;
     }
 
     private void IncrementSpeed()
@@ -68,14 +71,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Strafe()
     {
-
+        targetPos = Vector3.zero;
         if(Input.GetKeyDown(KeyCode.D))
         {
             ChangeLane(1);
+            transform.position += targetPos;
         }
         else if(Input.GetKeyDown(KeyCode.A))
         {
             ChangeLane(-1);
+            transform.position += targetPos;
         }
        
     }
@@ -89,11 +94,14 @@ public class PlayerMovement : MonoBehaviour
 
         currentLane = targetLane;
 
-        targetPos = transform.rotation * (new Vector3((currentLane - 1), 0, 0) ) * strafeDistance;
+        Vector3 deltapos = new Vector3((currentLane - 1), 0, 0);
 
-        targetPos.y = transform.position.y;
+        if (deltapos.x == 0 && direction == 1)
+            deltapos.x = 1;
+        else if (deltapos.x == 0 && direction == -1)
+            deltapos.x = -1;
 
-        transform.position = targetPos;
+        targetPos = transform.rotation * deltapos * strafeDistance;
 
         Debug.Log(targetPos);
     }
