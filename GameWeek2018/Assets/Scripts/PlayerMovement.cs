@@ -19,19 +19,21 @@ public class PlayerMovement : MonoBehaviour
 
     private int         strafeDir;
 
-    private bool        right       = false;
-    private bool        left        = false;
-    private bool        isStrafing  = false;
+    private int currentLane;
+    private int startingLane;
 
     private Vector3 targetPos;
 
     // Use this for initialization
     private void Start ()
     {
+        currentLane = 0;
         rigidbody                   = GetComponent<Rigidbody>();
         currentSpeed                = initialSpeed;
         accumulatedTime             = 0;
         Application.targetFrameRate = 60;
+
+        currentLane = startingLane;
 	}
 
     // Update is called once per frame
@@ -44,8 +46,10 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         IncrementSpeed();
-        transform.position = transform.position + transform.forward.normalized * currentSpeed * Time.deltaTime;
-        Debug.Log("Speederu! " + currentSpeed);
+
+        targetPos += transform.position + (transform.forward.normalized * (currentLane * Time.deltaTime));
+        //transform.position = transform.position + transform.forward.normalized * currentSpeed * Time.deltaTime;
+        //Debug.Log("Speederu! " + currentSpeed);
     }
 
     private void IncrementSpeed()
@@ -56,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             accumulatedTime = 0;
             currentSpeed += speedIncrement;
             currentSpeed = Mathf.Clamp(currentSpeed, initialSpeed, maxSpeed);
-            Debug.Log("Speed Incremented! " + currentSpeed);
+            //Debug.Log("Speed Incremented! " + currentSpeed);
         }
     }
 
@@ -67,35 +71,30 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.D))
         {
-            if (left)
-                left = false;
-            else
-                right = true;
+            ChangeLane(1);
         }
         else if(Input.GetKeyDown(KeyCode.A))
         {
-            if (right)
-                right = false;
-            else
-                left = true;
+            ChangeLane(-1);
         }
+       
+    }
 
-        if(left)
-        {
-            targetPos = transform.position - (transform.right * strafeDistance);
-        }
-        else if(right)
-        {
-            targetPos = transform.position + (transform.right * strafeDistance);
-        }
-        else
-        {
-            targetPos = transform.position;
-        }
+    private void ChangeLane(int direction)
+    {
+        int targetLane = currentLane + direction;
 
-        transform.position = Vector3.Lerp(transform.position, targetPos, strafeSpeed * Time.deltaTime);
+        if (targetLane < 0 || targetLane > 2)
+            return;
 
+        currentLane = targetLane;
 
+        targetPos = transform.rotation * (new Vector3((currentLane - 1), 0, 0) ) * strafeDistance;
 
+        targetPos.y = transform.position.y;
+
+        transform.position = targetPos;
+
+        Debug.Log(targetPos);
     }
 }
