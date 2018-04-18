@@ -15,13 +15,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float strafeSpeed;
     [SerializeField] private float colMinHeight;
 
-    private float       currentSpeed;
-    private float       accumulatedTime;
-    private Rigidbody   rb;
+    private float           currentSpeed;
+    private float           accumulatedTime;
+    private Rigidbody       rb;
 
     private CapsuleCollider col;
     private float           colStartHeight;
     private int             strafeDir;
+
+    private Animator        anim;
 
 
     private bool isGrounded;
@@ -38,12 +40,15 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform[] lanes;
 
+    public float groundOffset;
+
     [HideInInspector]
     public bool canMove = true;
 
     // Use this for initialization
     private void Start ()
     {
+        anim                                = gameObject.GetComponent<Animator>();
         col                                 = gameObject.GetComponent<CapsuleCollider>();
         colStartHeight                      = col.height;
         currentLane                         = 0;
@@ -158,11 +163,13 @@ public class PlayerMovement : MonoBehaviour
                 col.height = colStartHeight;
         }
 
+        anim.SetBool("Sliding", isSliding);
+
     }
 
     private void CheckGrounded()
     {
-        if (Physics.OverlapSphere(transform.position - (Vector3.up * transform.localScale.y), 0.1f, ~(1 << 8)).Length > 0)
+        if (Physics.OverlapSphere(transform.position - ((Vector3.up * groundOffset) * transform.localScale.y), 0.1f, ~(1 << 8)).Length > 0)
         {
             isGrounded = true;
         }
@@ -202,6 +209,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position - (Vector3.up * transform.localScale.y), 0.1f);
+        Gizmos.DrawWireSphere(transform.position - ((Vector3.up * groundOffset) * transform.localScale.y), 0.1f);
     }
 }
