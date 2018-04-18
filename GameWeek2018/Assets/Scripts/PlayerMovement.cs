@@ -54,15 +54,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //if (Physics.OverlapSphere(transform.position - (Vector3.up), 0.1f, ~(1 << 8)).Length > 0)
-        //{
-        //    isGrounded = true;
-        //}
-        //else
-        //{
-        //    isGrounded = false;
-        //}
-
         if (!canMove) return;
 
         MovePlayer();
@@ -143,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(!isSliding)
         {
-            col.height = Mathf.Lerp(col.height, colStartHeight, 5 * Time.deltaTime);
+            col.height = Mathf.Lerp(col.height, colStartHeight, 10 * Time.deltaTime);
 
             if (Mathf.Approximately(col.height, colStartHeight))
                 col.height = colStartHeight;
