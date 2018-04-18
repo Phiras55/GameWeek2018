@@ -1,0 +1,836 @@
+fileFormatVersion: 2
+guid: d68971dcc542960478f1cd2b835b0185
+timeCreated: 1524079439
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Ball_LOC
+    100004: Ball_LOC 1
+    100006: Body_CTRL
+    100008: Chest2_Proxy_Geo
+    100010: DO_NOT_TOUCH
+    100012: DO_NOT_TOUCH 1
+    100014: DO_NOT_TOUCH_GRP
+    100016: DO_NOT_TOUCH_GRP 1
+    100018: DO_NOT_TOUCH_GRP 2
+    100020: Fingers
+    100022: Fingers 1
+    100024: Girl_root_transform_CTRL
+    100026: group21
+    100028: group22
+    100030: Heel_LOC
+    100032: Heel_LOC 1
+    100034: Hip_bind_JNT
+    100036: Hip_CTRL
+    100038: Hip_FK_JNT
+    100040: Hip_FKconst_GRP
+    100042: Left_Arm_CTRL
+    100044: Left_Arm_Fk_GRP
+    100046: Left_Arm_GRP
+    100048: Left_Arm_GRP 1
+    100050: Left_Arm_IK_GRP
+    100052: Left_Arm_Result_GRP
+    100054: Left_Arm_ShoulderSpace_LOC
+    100056: Left_Ball_FK_CTRL
+    100058: Left_Ball_FK_CTRL 1
+    100060: Left_Ball_HDL
+    100062: Left_Ball_HDL 1
+    100064: Left_Ball_IK_JNT
+    100066: Left_Ball_IK_JNT 1
+    100068: Left_Ball_Result_JNT
+    100070: Left_Ball_Result_JNT 1
+    100072: Left_Cuisse_FK_CTRL
+    100074: Left_Cuisse_FK_CTRL 1
+    100076: Left_Cuisse_IK_JNT
+    100078: Left_Cuisse_IK_JNT 1
+    100080: Left_Cuisse_Result_JNT
+    100082: Left_Cuisse_Result_JNT 1
+    100084: Left_cuisse_Rot_Result_JNT
+    100086: Left_cuisse_Rot_Result_JNT 1
+    100088: Left_Elbow_CTRL
+    100090: Left_Elbow_LOC
+    100092: Left_Finger_CTRL
+    100094: Left_Finger_GRP
+    100096: Left_Foot_CTRL
+    100098: Left_Foot_CTRL 1
+    100100: Left_Foot_CTRL 2
+    100102: Left_Foot_CTRL 3
+    100104: Left_Foot_FK_CTRL
+    100106: Left_Foot_FK_CTRL 1
+    100108: Left_Foot_IK_JNT
+    100110: Left_Foot_IK_JNT 1
+    100112: Left_Foot_Result_JNT
+    100114: Left_Foot_Result_JNT 1
+    100116: Left_Forearm_FK_CTRL
+    100118: Left_Forearm_IK_JNT
+    100120: Left_Forearm_Result_JNT
+    100122: Left_Forearm_Root_FK_CTRL
+    100124: Left_Forearm_Root_IK_JNT
+    100126: Left_Forearm_Root_Result_JNT
+    100128: Left_Hand_Fingers_GRP
+    100130: Left_Hand_FK_JNT
+    100132: Left_Hand_IK_JNT
+    100134: Left_Hand_IndexFinger_1_Auto_JNT
+    100136: Left_Hand_IndexFinger_1_Manual_JNT
+    100138: Left_Hand_IndexFinger_1_Result_JNT
+    100140: Left_Hand_IndexFinger_2_Auto_JNT
+    100142: Left_Hand_IndexFinger_2_Manual_JNT
+    100144: Left_Hand_IndexFinger_2_Result_JNT
+    100146: Left_Hand_IndexFinger_3_Auto_JNT
+    100148: Left_Hand_IndexFinger_3_Manual_JNT
+    100150: Left_Hand_IndexFinger_3_Result_JNT
+    100152: Left_Hand_IndexFinger_Auto_GRP
+    100154: Left_Hand_IndexFinger_end_Auto_JNT
+    100156: Left_Hand_IndexFinger_end_Manual_JNT
+    100158: Left_Hand_IndexFinger_end_Result_JNT
+    100160: Left_Hand_IndexFinger_GRP
+    100162: Left_Hand_IndexFinger_Manual_GRP
+    100164: Left_Hand_IndexFinger_Result_GRP
+    100166: Left_Hand_MiddleFinger_1_Auto_JNT
+    100168: Left_Hand_MiddleFinger_1_Manual_JNT
+    100170: Left_Hand_MiddleFinger_1_Result_JNT
+    100172: Left_Hand_MiddleFinger_2_Auto_JNT
+    100174: Left_Hand_MiddleFinger_2_Manual_JNT
+    100176: Left_Hand_MiddleFinger_2_Result_JNT
+    100178: Left_Hand_MiddleFinger_3_Auto_JNT
+    100180: Left_Hand_MiddleFinger_3_Manual_JNT
+    100182: Left_Hand_MiddleFinger_3_Result_JNT
+    100184: Left_Hand_MiddleFinger_Auto_GRP
+    100186: Left_Hand_MiddleFinger_end_Auto_JNT
+    100188: Left_Hand_MiddleFinger_end_Manual_JNT
+    100190: Left_Hand_MiddleFinger_end_Result_JNT
+    100192: Left_Hand_MiddleFinger_GRP
+    100194: Left_Hand_MiddleFinger_Manual_GRP
+    100196: Left_Hand_MiddleFinger_Result_GRP
+    100198: Left_Hand_Result_JNT
+    100200: Left_Hand_RingFinger_1_Auto_JNT
+    100202: Left_Hand_RingFinger_1_Manual_JNT
+    100204: Left_Hand_RingFinger_1_Result_JNT
+    100206: Left_Hand_RingFinger_2_Auto_JNT
+    100208: Left_Hand_RingFinger_2_Manual_JNT
+    100210: Left_Hand_RingFinger_2_Result_JNT
+    100212: Left_Hand_RingFinger_3_Auto_JNT
+    100214: Left_Hand_RingFinger_3_Manual_JNT
+    100216: Left_Hand_RingFinger_3_Result_JNT
+    100218: Left_Hand_RingFinger_Auto_GRP
+    100220: Left_Hand_RingFinger_end_Auto_JNT
+    100222: Left_Hand_RingFinger_end_Manual_JNT
+    100224: Left_Hand_RingFinger_end_Result_JNT
+    100226: Left_Hand_RingFinger_GRP
+    100228: Left_Hand_RingFinger_Manual_GRP
+    100230: Left_Hand_RingFinger_Result_GRP
+    100232: Left_Hand_SmallFinger_1_Auto_JNT
+    100234: Left_Hand_SmallFinger_1_Manual_JNT
+    100236: Left_Hand_SmallFinger_1_Result_JNT
+    100238: Left_Hand_SmallFinger_2_Auto_JNT
+    100240: Left_Hand_SmallFinger_2_Manual_JNT
+    100242: Left_Hand_SmallFinger_2_Result_JNT
+    100244: Left_Hand_SmallFinger_3_Auto_JNT
+    100246: Left_Hand_SmallFinger_3_Manual_JNT
+    100248: Left_Hand_SmallFinger_3_Result_JNT
+    100250: Left_Hand_SmallFinger_Auto_GRP
+    100252: Left_Hand_SmallFinger_end_Auto_JNT
+    100254: Left_Hand_SmallFinger_end_Manual_JNT
+    100256: Left_Hand_SmallFinger_end_Result_JNT
+    100258: Left_Hand_SmallFinger_GRP
+    100260: Left_Hand_SmallFinger_Manual_GRP
+    100262: Left_Hand_SmallFinger_Result_GRP
+    100264: Left_Hand_Thumb_1_Auto_JNT
+    100266: Left_Hand_Thumb_1_Manual_JNT
+    100268: Left_Hand_Thumb_1_Result_JNT
+    100270: Left_Hand_Thumb_2_Auto_JNT
+    100272: Left_Hand_Thumb_2_Manual_JNT
+    100274: Left_Hand_Thumb_2_Result_JNT
+    100276: Left_Hand_Thumb_3_Auto_JNT
+    100278: Left_Hand_Thumb_3_Manual_JNT
+    100280: Left_Hand_Thumb_3_Result_JNT
+    100282: Left_Hand_Thumb_Auto_GRP
+    100284: Left_Hand_Thumb_end_Auto_JNT
+    100286: Left_Hand_Thumb_end_Manual_JNT
+    100288: Left_Hand_Thumb_end_Result_JNT
+    100290: Left_Hand_Thumb_GRP
+    100292: Left_Hand_Thumb_Manual_GRP
+    100294: Left_Hand_Thumb_Result_GRP
+    100296: Left_Inner_Foot_LOC
+    100298: Left_Inner_Foot_LOC 1
+    100300: Left_Knee_CTRL
+    100302: Left_Knee_CTRL 1
+    100304: Left_Knee_FK_CTRL
+    100306: Left_Knee_FK_CTRL 1
+    100308: Left_Knee_FK_CTRL 2
+    100310: Left_Knee_GRP
+    100312: Left_Knee_GRP 1
+    100314: Left_Knee_IK_JNT
+    100316: Left_Knee_IK_JNT 1
+    100318: Left_Knee_IK_JNT 2
+    100320: Left_Knee_LOC
+    100322: Left_Knee_LOC 1
+    100324: Left_Knee_Result_JNT
+    100326: Left_Knee_Result_JNT 1
+    100328: Left_Knee_Result_JNT 2
+    100330: Left_Leg_FK_GRP
+    100332: Left_Leg_FK_GRP 1
+    100334: Left_Leg_GRP
+    100336: Left_Leg_GRP1
+    100338: Left_Leg_HDL
+    100340: Left_Leg_HDL 1
+    100342: Left_Leg_HipSpace_LOC
+    100344: Left_Leg_HipSpace_LOC 1
+    100346: Left_Leg_IK_GRP
+    100348: Left_Leg_IK_GRP 1
+    100350: Left_Leg_Result_GRP
+    100352: Left_Leg_Result_GRP 1
+    100354: Left_Outer_Foot_LOC
+    100356: Left_Outer_Foot_LOC 1
+    100358: Left_Shin_FK_CTRL
+    100360: Left_Shin_FK_CTRL 1
+    100362: Left_Shin_IK_JNT
+    100364: Left_Shin_IK_JNT 1
+    100366: Left_Shin_Result_JNT
+    100368: Left_Shin_Result_JNT 1
+    100370: Left_Shoulder_Base_JNT
+    100372: Left_Shoulder_CTRL
+    100374: Left_Shoulder_End_JNT
+    100376: Left_Shoulder_GRP
+    100378: Left_Toe_FK_JNT
+    100380: Left_Toe_FK_JNT 1
+    100382: Left_Toe_HDL
+    100384: Left_Toe_HDL 1
+    100386: Left_Toe_IK_JNT
+    100388: Left_Toe_IK_JNT 1
+    100390: Left_Toe_Result_JNT
+    100392: Left_Toe_Result_JNT 1
+    100394: Left_Upperarm_FK_CTRL
+    100396: Left_Upperarm_IK_JNT
+    100398: Left_Upperarm_Result_JNT
+    100400: Left_Wrist_FK_CTRL
+    100402: Left_Wrist_IK_JNT
+    100404: Left_Wrist_Result_JNT
+    100406: Legt_arm_GRP
+    100408: locator1
+    100410: perso
+    100412: polySurface135
+    100414: polySurface136
+    100416: polySurface138
+    100418: polySurface158
+    100420: polySurface158 1
+    100422: polySurface162
+    100424: polySurface162 1
+    100426: polySurface175
+    100428: polySurface175 1
+    100430: Right_Arm_CTRL
+    100432: Right_Arm_CTRL 1
+    100434: Right_Arm_CTRL 2
+    100436: Right_Arm_Fk_GRP
+    100438: Right_Arm_GRP
+    100440: Right_arm_GRP
+    100442: Right_Arm_GRP 1
+    100444: Right_Arm_HDL
+    100446: Right_Arm_HDL 1
+    100448: Right_Arm_IK_GRP
+    100450: Right_Arm_Result_GRP
+    100452: Right_Arm_ShoulderSpace_LOC
+    100454: Right_Elbow_CTRL
+    100456: Right_Elbow_LOC
+    100458: Right_Finger_CTRL
+    100460: Right_Finger_GRP
+    100462: Right_Forearm_FK_CTRL
+    100464: Right_Forearm_IK_JNT
+    100466: Right_Forearm_Result_JNT
+    100468: Right_Forearm_Root_FK_CTRL
+    100470: Right_Forearm_Root_IK_JNT
+    100472: Right_Forearm_Root_Result_JNT
+    100474: Right_Hand_Fingers_GRP
+    100476: Right_Hand_FK_JNT
+    100478: Right_Hand_HDL
+    100480: Right_Hand_HDL 1
+    100482: Right_Hand_IK_JNT
+    100484: Right_Hand_IndexFinger_1_Auto_JNT
+    100486: Right_Hand_IndexFinger_1_Manual_JNT
+    100488: Right_Hand_IndexFinger_1_Result_JNT
+    100490: Right_Hand_IndexFinger_2_Auto_JNT
+    100492: Right_Hand_IndexFinger_2_Manual_JNT
+    100494: Right_Hand_IndexFinger_2_Result_JNT
+    100496: Right_Hand_IndexFinger_3_Auto_JNT
+    100498: Right_Hand_IndexFinger_3_Manual_JNT
+    100500: Right_Hand_IndexFinger_3_Result_JNT
+    100502: Right_Hand_IndexFinger_Auto_GRP
+    100504: Right_Hand_IndexFinger_end_Auto_JNT
+    100506: Right_Hand_IndexFinger_end_Manual_JNT
+    100508: Right_Hand_IndexFinger_end_Result_JNT
+    100510: Right_Hand_IndexFinger_GRP
+    100512: Right_Hand_IndexFinger_Manual_GRP
+    100514: Right_Hand_IndexFinger_Result_GRP
+    100516: Right_Hand_MiddleFinger_1_Auto_JNT
+    100518: Right_Hand_MiddleFinger_1_Manual_JNT
+    100520: Right_Hand_MiddleFinger_1_Result_JNT
+    100522: Right_Hand_MiddleFinger_2_Auto_JNT
+    100524: Right_Hand_MiddleFinger_2_Manual_JNT
+    100526: Right_Hand_MiddleFinger_2_Result_JNT
+    100528: Right_Hand_MiddleFinger_3_Auto_JNT
+    100530: Right_Hand_MiddleFinger_3_Manual_JNT
+    100532: Right_Hand_MiddleFinger_3_Result_JNT
+    100534: Right_Hand_MiddleFinger_Auto_GRP
+    100536: Right_Hand_MiddleFinger_end_Auto_JNT
+    100538: Right_Hand_MiddleFinger_end_Manual_JNT
+    100540: Right_Hand_MiddleFinger_end_Result_JNT
+    100542: Right_Hand_MiddleFinger_GRP
+    100544: Right_Hand_MiddleFinger_Manual_GRP
+    100546: Right_Hand_MiddleFinger_Result_GRP
+    100548: Right_Hand_Result_JNT
+    100550: Right_Hand_RingFinger_1_Auto_JNT
+    100552: Right_Hand_RingFinger_1_Manual_JNT
+    100554: Right_Hand_RingFinger_1_Result_JNT
+    100556: Right_Hand_RingFinger_2_Auto_JNT
+    100558: Right_Hand_RingFinger_2_Manual_JNT
+    100560: Right_Hand_RingFinger_2_Result_JNT
+    100562: Right_Hand_RingFinger_3_Auto_JNT
+    100564: Right_Hand_RingFinger_3_Manual_JNT
+    100566: Right_Hand_RingFinger_3_Result_JNT
+    100568: Right_Hand_RingFinger_Auto_GRP
+    100570: Right_Hand_RingFinger_end_Auto_JNT
+    100572: Right_Hand_RingFinger_end_Manual_JNT
+    100574: Right_Hand_RingFinger_end_Result_JNT
+    100576: Right_Hand_RingFinger_GRP
+    100578: Right_Hand_RingFinger_Manual_GRP
+    100580: Right_Hand_RingFinger_Result_GRP
+    100582: Right_Hand_SmallFinger_1_Auto_JNT
+    100584: Right_Hand_SmallFinger_1_Manual_JNT
+    100586: Right_Hand_SmallFinger_1_Result_JNT
+    100588: Right_Hand_SmallFinger_2_Auto_JNT
+    100590: Right_Hand_SmallFinger_2_Manual_JNT
+    100592: Right_Hand_SmallFinger_2_Result_JNT
+    100594: Right_Hand_SmallFinger_3_Auto_JNT
+    100596: Right_Hand_SmallFinger_3_Manual_JNT
+    100598: Right_Hand_SmallFinger_3_Result_JNT
+    100600: Right_Hand_SmallFinger_Auto_GRP
+    100602: Right_Hand_SmallFinger_end_Auto_JNT
+    100604: Right_Hand_SmallFinger_end_Manual_JNT
+    100606: Right_Hand_SmallFinger_end_Result_JNT
+    100608: Right_Hand_SmallFinger_GRP
+    100610: Right_Hand_SmallFinger_Manual_GRP
+    100612: Right_Hand_SmallFinger_Result_GRP
+    100614: Right_Hand_Thumb_1_Auto_JNT
+    100616: Right_Hand_Thumb_1_Manual_JNT
+    100618: Right_Hand_Thumb_1_Result_JNT
+    100620: Right_Hand_Thumb_2_Auto_JNT
+    100622: Right_Hand_Thumb_2_Manual_JNT
+    100624: Right_Hand_Thumb_2_Result_JNT
+    100626: Right_Hand_Thumb_3_Auto_JNT
+    100628: Right_Hand_Thumb_3_Manual_JNT
+    100630: Right_Hand_Thumb_3_Result_JNT
+    100632: Right_Hand_Thumb_Auto_GRP
+    100634: Right_Hand_Thumb_end_Auto_JNT
+    100636: Right_Hand_Thumb_end_Manual_JNT
+    100638: Right_Hand_Thumb_end_Result_JNT
+    100640: Right_Hand_Thumb_GRP
+    100642: Right_Hand_Thumb_Manual_GRP
+    100644: Right_Hand_Thumb_Result_GRP
+    100646: Right_Knee_FK_CTRL
+    100648: Right_Knee_IK_JNT
+    100650: Right_Knee_Result_JNT
+    100652: Right_Leg_BodySpace_LOC
+    100654: Right_Leg_HipSpace_LOC
+    100656: Right_Leg_HipSpace_LOC 1
+    100658: Right_Leg_HipSpace_LOC1
+    100660: Right_Shoulder_Base_JNT
+    100662: Right_Shoulder_CTRL
+    100664: Right_Shoulder_End_JNT
+    100666: Right_Shoulder_GRP
+    100668: Right_Upperarm_FK_CTRL
+    100670: Right_Upperarm_IK_JNT
+    100672: Right_Upperarm_Result_JNT
+    100674: Right_Wrist_FK_CTRL
+    100676: Right_Wrist_IK_JNT
+    100678: Right_Wrist_Result_JNT
+    100680: Settings_GRP
+    100682: Settings_GRP 1
+    100684: Shoulder_bind_JNT
+    100686: Shoulder_CTRL
+    100688: Shoulder_FK_JNT
+    100690: Shoulder_FKconst_GRP
+    100692: Spine1_FK_CTRL
+    100694: Spine1_result_JNT
+    100696: Spine2_FK_CTRL
+    100698: Spine2_result_JNT
+    100700: Spine3_result_JNT
+    100702: Spine4_result_JNT
+    100704: Spine5_result_JNT
+    100706: Spine6_result_JNT
+    100708: Spine_CVR
+    100710: Spine_HDL
+    100712: Toe_LOC
+    100714: Toe_LOC 1
+    100716: Toe_Wiggle_GRP
+    100718: Toe_Wiggle_GRP 1
+    100720: Torso_GRP
+    100722: transform100
+    100724: transform101
+    100726: transform102
+    100728: transform103
+    100730: transform173
+    100732: transform174
+    100734: transform175
+    100736: transform175 1
+    100738: transform177
+    100740: transform178
+    100742: transform178 1
+    400000: //RootNode
+    400002: Ball_LOC
+    400004: Ball_LOC 1
+    400006: Body_CTRL
+    400008: Chest2_Proxy_Geo
+    400010: DO_NOT_TOUCH
+    400012: DO_NOT_TOUCH 1
+    400014: DO_NOT_TOUCH_GRP
+    400016: DO_NOT_TOUCH_GRP 1
+    400018: DO_NOT_TOUCH_GRP 2
+    400020: Fingers
+    400022: Fingers 1
+    400024: Girl_root_transform_CTRL
+    400026: group21
+    400028: group22
+    400030: Heel_LOC
+    400032: Heel_LOC 1
+    400034: Hip_bind_JNT
+    400036: Hip_CTRL
+    400038: Hip_FK_JNT
+    400040: Hip_FKconst_GRP
+    400042: Left_Arm_CTRL
+    400044: Left_Arm_Fk_GRP
+    400046: Left_Arm_GRP
+    400048: Left_Arm_GRP 1
+    400050: Left_Arm_IK_GRP
+    400052: Left_Arm_Result_GRP
+    400054: Left_Arm_ShoulderSpace_LOC
+    400056: Left_Ball_FK_CTRL
+    400058: Left_Ball_FK_CTRL 1
+    400060: Left_Ball_HDL
+    400062: Left_Ball_HDL 1
+    400064: Left_Ball_IK_JNT
+    400066: Left_Ball_IK_JNT 1
+    400068: Left_Ball_Result_JNT
+    400070: Left_Ball_Result_JNT 1
+    400072: Left_Cuisse_FK_CTRL
+    400074: Left_Cuisse_FK_CTRL 1
+    400076: Left_Cuisse_IK_JNT
+    400078: Left_Cuisse_IK_JNT 1
+    400080: Left_Cuisse_Result_JNT
+    400082: Left_Cuisse_Result_JNT 1
+    400084: Left_cuisse_Rot_Result_JNT
+    400086: Left_cuisse_Rot_Result_JNT 1
+    400088: Left_Elbow_CTRL
+    400090: Left_Elbow_LOC
+    400092: Left_Finger_CTRL
+    400094: Left_Finger_GRP
+    400096: Left_Foot_CTRL
+    400098: Left_Foot_CTRL 1
+    400100: Left_Foot_CTRL 2
+    400102: Left_Foot_CTRL 3
+    400104: Left_Foot_FK_CTRL
+    400106: Left_Foot_FK_CTRL 1
+    400108: Left_Foot_IK_JNT
+    400110: Left_Foot_IK_JNT 1
+    400112: Left_Foot_Result_JNT
+    400114: Left_Foot_Result_JNT 1
+    400116: Left_Forearm_FK_CTRL
+    400118: Left_Forearm_IK_JNT
+    400120: Left_Forearm_Result_JNT
+    400122: Left_Forearm_Root_FK_CTRL
+    400124: Left_Forearm_Root_IK_JNT
+    400126: Left_Forearm_Root_Result_JNT
+    400128: Left_Hand_Fingers_GRP
+    400130: Left_Hand_FK_JNT
+    400132: Left_Hand_IK_JNT
+    400134: Left_Hand_IndexFinger_1_Auto_JNT
+    400136: Left_Hand_IndexFinger_1_Manual_JNT
+    400138: Left_Hand_IndexFinger_1_Result_JNT
+    400140: Left_Hand_IndexFinger_2_Auto_JNT
+    400142: Left_Hand_IndexFinger_2_Manual_JNT
+    400144: Left_Hand_IndexFinger_2_Result_JNT
+    400146: Left_Hand_IndexFinger_3_Auto_JNT
+    400148: Left_Hand_IndexFinger_3_Manual_JNT
+    400150: Left_Hand_IndexFinger_3_Result_JNT
+    400152: Left_Hand_IndexFinger_Auto_GRP
+    400154: Left_Hand_IndexFinger_end_Auto_JNT
+    400156: Left_Hand_IndexFinger_end_Manual_JNT
+    400158: Left_Hand_IndexFinger_end_Result_JNT
+    400160: Left_Hand_IndexFinger_GRP
+    400162: Left_Hand_IndexFinger_Manual_GRP
+    400164: Left_Hand_IndexFinger_Result_GRP
+    400166: Left_Hand_MiddleFinger_1_Auto_JNT
+    400168: Left_Hand_MiddleFinger_1_Manual_JNT
+    400170: Left_Hand_MiddleFinger_1_Result_JNT
+    400172: Left_Hand_MiddleFinger_2_Auto_JNT
+    400174: Left_Hand_MiddleFinger_2_Manual_JNT
+    400176: Left_Hand_MiddleFinger_2_Result_JNT
+    400178: Left_Hand_MiddleFinger_3_Auto_JNT
+    400180: Left_Hand_MiddleFinger_3_Manual_JNT
+    400182: Left_Hand_MiddleFinger_3_Result_JNT
+    400184: Left_Hand_MiddleFinger_Auto_GRP
+    400186: Left_Hand_MiddleFinger_end_Auto_JNT
+    400188: Left_Hand_MiddleFinger_end_Manual_JNT
+    400190: Left_Hand_MiddleFinger_end_Result_JNT
+    400192: Left_Hand_MiddleFinger_GRP
+    400194: Left_Hand_MiddleFinger_Manual_GRP
+    400196: Left_Hand_MiddleFinger_Result_GRP
+    400198: Left_Hand_Result_JNT
+    400200: Left_Hand_RingFinger_1_Auto_JNT
+    400202: Left_Hand_RingFinger_1_Manual_JNT
+    400204: Left_Hand_RingFinger_1_Result_JNT
+    400206: Left_Hand_RingFinger_2_Auto_JNT
+    400208: Left_Hand_RingFinger_2_Manual_JNT
+    400210: Left_Hand_RingFinger_2_Result_JNT
+    400212: Left_Hand_RingFinger_3_Auto_JNT
+    400214: Left_Hand_RingFinger_3_Manual_JNT
+    400216: Left_Hand_RingFinger_3_Result_JNT
+    400218: Left_Hand_RingFinger_Auto_GRP
+    400220: Left_Hand_RingFinger_end_Auto_JNT
+    400222: Left_Hand_RingFinger_end_Manual_JNT
+    400224: Left_Hand_RingFinger_end_Result_JNT
+    400226: Left_Hand_RingFinger_GRP
+    400228: Left_Hand_RingFinger_Manual_GRP
+    400230: Left_Hand_RingFinger_Result_GRP
+    400232: Left_Hand_SmallFinger_1_Auto_JNT
+    400234: Left_Hand_SmallFinger_1_Manual_JNT
+    400236: Left_Hand_SmallFinger_1_Result_JNT
+    400238: Left_Hand_SmallFinger_2_Auto_JNT
+    400240: Left_Hand_SmallFinger_2_Manual_JNT
+    400242: Left_Hand_SmallFinger_2_Result_JNT
+    400244: Left_Hand_SmallFinger_3_Auto_JNT
+    400246: Left_Hand_SmallFinger_3_Manual_JNT
+    400248: Left_Hand_SmallFinger_3_Result_JNT
+    400250: Left_Hand_SmallFinger_Auto_GRP
+    400252: Left_Hand_SmallFinger_end_Auto_JNT
+    400254: Left_Hand_SmallFinger_end_Manual_JNT
+    400256: Left_Hand_SmallFinger_end_Result_JNT
+    400258: Left_Hand_SmallFinger_GRP
+    400260: Left_Hand_SmallFinger_Manual_GRP
+    400262: Left_Hand_SmallFinger_Result_GRP
+    400264: Left_Hand_Thumb_1_Auto_JNT
+    400266: Left_Hand_Thumb_1_Manual_JNT
+    400268: Left_Hand_Thumb_1_Result_JNT
+    400270: Left_Hand_Thumb_2_Auto_JNT
+    400272: Left_Hand_Thumb_2_Manual_JNT
+    400274: Left_Hand_Thumb_2_Result_JNT
+    400276: Left_Hand_Thumb_3_Auto_JNT
+    400278: Left_Hand_Thumb_3_Manual_JNT
+    400280: Left_Hand_Thumb_3_Result_JNT
+    400282: Left_Hand_Thumb_Auto_GRP
+    400284: Left_Hand_Thumb_end_Auto_JNT
+    400286: Left_Hand_Thumb_end_Manual_JNT
+    400288: Left_Hand_Thumb_end_Result_JNT
+    400290: Left_Hand_Thumb_GRP
+    400292: Left_Hand_Thumb_Manual_GRP
+    400294: Left_Hand_Thumb_Result_GRP
+    400296: Left_Inner_Foot_LOC
+    400298: Left_Inner_Foot_LOC 1
+    400300: Left_Knee_CTRL
+    400302: Left_Knee_CTRL 1
+    400304: Left_Knee_FK_CTRL
+    400306: Left_Knee_FK_CTRL 1
+    400308: Left_Knee_FK_CTRL 2
+    400310: Left_Knee_GRP
+    400312: Left_Knee_GRP 1
+    400314: Left_Knee_IK_JNT
+    400316: Left_Knee_IK_JNT 1
+    400318: Left_Knee_IK_JNT 2
+    400320: Left_Knee_LOC
+    400322: Left_Knee_LOC 1
+    400324: Left_Knee_Result_JNT
+    400326: Left_Knee_Result_JNT 1
+    400328: Left_Knee_Result_JNT 2
+    400330: Left_Leg_FK_GRP
+    400332: Left_Leg_FK_GRP 1
+    400334: Left_Leg_GRP
+    400336: Left_Leg_GRP1
+    400338: Left_Leg_HDL
+    400340: Left_Leg_HDL 1
+    400342: Left_Leg_HipSpace_LOC
+    400344: Left_Leg_HipSpace_LOC 1
+    400346: Left_Leg_IK_GRP
+    400348: Left_Leg_IK_GRP 1
+    400350: Left_Leg_Result_GRP
+    400352: Left_Leg_Result_GRP 1
+    400354: Left_Outer_Foot_LOC
+    400356: Left_Outer_Foot_LOC 1
+    400358: Left_Shin_FK_CTRL
+    400360: Left_Shin_FK_CTRL 1
+    400362: Left_Shin_IK_JNT
+    400364: Left_Shin_IK_JNT 1
+    400366: Left_Shin_Result_JNT
+    400368: Left_Shin_Result_JNT 1
+    400370: Left_Shoulder_Base_JNT
+    400372: Left_Shoulder_CTRL
+    400374: Left_Shoulder_End_JNT
+    400376: Left_Shoulder_GRP
+    400378: Left_Toe_FK_JNT
+    400380: Left_Toe_FK_JNT 1
+    400382: Left_Toe_HDL
+    400384: Left_Toe_HDL 1
+    400386: Left_Toe_IK_JNT
+    400388: Left_Toe_IK_JNT 1
+    400390: Left_Toe_Result_JNT
+    400392: Left_Toe_Result_JNT 1
+    400394: Left_Upperarm_FK_CTRL
+    400396: Left_Upperarm_IK_JNT
+    400398: Left_Upperarm_Result_JNT
+    400400: Left_Wrist_FK_CTRL
+    400402: Left_Wrist_IK_JNT
+    400404: Left_Wrist_Result_JNT
+    400406: Legt_arm_GRP
+    400408: locator1
+    400410: perso
+    400412: polySurface135
+    400414: polySurface136
+    400416: polySurface138
+    400418: polySurface158
+    400420: polySurface158 1
+    400422: polySurface162
+    400424: polySurface162 1
+    400426: polySurface175
+    400428: polySurface175 1
+    400430: Right_Arm_CTRL
+    400432: Right_Arm_CTRL 1
+    400434: Right_Arm_CTRL 2
+    400436: Right_Arm_Fk_GRP
+    400438: Right_Arm_GRP
+    400440: Right_arm_GRP
+    400442: Right_Arm_GRP 1
+    400444: Right_Arm_HDL
+    400446: Right_Arm_HDL 1
+    400448: Right_Arm_IK_GRP
+    400450: Right_Arm_Result_GRP
+    400452: Right_Arm_ShoulderSpace_LOC
+    400454: Right_Elbow_CTRL
+    400456: Right_Elbow_LOC
+    400458: Right_Finger_CTRL
+    400460: Right_Finger_GRP
+    400462: Right_Forearm_FK_CTRL
+    400464: Right_Forearm_IK_JNT
+    400466: Right_Forearm_Result_JNT
+    400468: Right_Forearm_Root_FK_CTRL
+    400470: Right_Forearm_Root_IK_JNT
+    400472: Right_Forearm_Root_Result_JNT
+    400474: Right_Hand_Fingers_GRP
+    400476: Right_Hand_FK_JNT
+    400478: Right_Hand_HDL
+    400480: Right_Hand_HDL 1
+    400482: Right_Hand_IK_JNT
+    400484: Right_Hand_IndexFinger_1_Auto_JNT
+    400486: Right_Hand_IndexFinger_1_Manual_JNT
+    400488: Right_Hand_IndexFinger_1_Result_JNT
+    400490: Right_Hand_IndexFinger_2_Auto_JNT
+    400492: Right_Hand_IndexFinger_2_Manual_JNT
+    400494: Right_Hand_IndexFinger_2_Result_JNT
+    400496: Right_Hand_IndexFinger_3_Auto_JNT
+    400498: Right_Hand_IndexFinger_3_Manual_JNT
+    400500: Right_Hand_IndexFinger_3_Result_JNT
+    400502: Right_Hand_IndexFinger_Auto_GRP
+    400504: Right_Hand_IndexFinger_end_Auto_JNT
+    400506: Right_Hand_IndexFinger_end_Manual_JNT
+    400508: Right_Hand_IndexFinger_end_Result_JNT
+    400510: Right_Hand_IndexFinger_GRP
+    400512: Right_Hand_IndexFinger_Manual_GRP
+    400514: Right_Hand_IndexFinger_Result_GRP
+    400516: Right_Hand_MiddleFinger_1_Auto_JNT
+    400518: Right_Hand_MiddleFinger_1_Manual_JNT
+    400520: Right_Hand_MiddleFinger_1_Result_JNT
+    400522: Right_Hand_MiddleFinger_2_Auto_JNT
+    400524: Right_Hand_MiddleFinger_2_Manual_JNT
+    400526: Right_Hand_MiddleFinger_2_Result_JNT
+    400528: Right_Hand_MiddleFinger_3_Auto_JNT
+    400530: Right_Hand_MiddleFinger_3_Manual_JNT
+    400532: Right_Hand_MiddleFinger_3_Result_JNT
+    400534: Right_Hand_MiddleFinger_Auto_GRP
+    400536: Right_Hand_MiddleFinger_end_Auto_JNT
+    400538: Right_Hand_MiddleFinger_end_Manual_JNT
+    400540: Right_Hand_MiddleFinger_end_Result_JNT
+    400542: Right_Hand_MiddleFinger_GRP
+    400544: Right_Hand_MiddleFinger_Manual_GRP
+    400546: Right_Hand_MiddleFinger_Result_GRP
+    400548: Right_Hand_Result_JNT
+    400550: Right_Hand_RingFinger_1_Auto_JNT
+    400552: Right_Hand_RingFinger_1_Manual_JNT
+    400554: Right_Hand_RingFinger_1_Result_JNT
+    400556: Right_Hand_RingFinger_2_Auto_JNT
+    400558: Right_Hand_RingFinger_2_Manual_JNT
+    400560: Right_Hand_RingFinger_2_Result_JNT
+    400562: Right_Hand_RingFinger_3_Auto_JNT
+    400564: Right_Hand_RingFinger_3_Manual_JNT
+    400566: Right_Hand_RingFinger_3_Result_JNT
+    400568: Right_Hand_RingFinger_Auto_GRP
+    400570: Right_Hand_RingFinger_end_Auto_JNT
+    400572: Right_Hand_RingFinger_end_Manual_JNT
+    400574: Right_Hand_RingFinger_end_Result_JNT
+    400576: Right_Hand_RingFinger_GRP
+    400578: Right_Hand_RingFinger_Manual_GRP
+    400580: Right_Hand_RingFinger_Result_GRP
+    400582: Right_Hand_SmallFinger_1_Auto_JNT
+    400584: Right_Hand_SmallFinger_1_Manual_JNT
+    400586: Right_Hand_SmallFinger_1_Result_JNT
+    400588: Right_Hand_SmallFinger_2_Auto_JNT
+    400590: Right_Hand_SmallFinger_2_Manual_JNT
+    400592: Right_Hand_SmallFinger_2_Result_JNT
+    400594: Right_Hand_SmallFinger_3_Auto_JNT
+    400596: Right_Hand_SmallFinger_3_Manual_JNT
+    400598: Right_Hand_SmallFinger_3_Result_JNT
+    400600: Right_Hand_SmallFinger_Auto_GRP
+    400602: Right_Hand_SmallFinger_end_Auto_JNT
+    400604: Right_Hand_SmallFinger_end_Manual_JNT
+    400606: Right_Hand_SmallFinger_end_Result_JNT
+    400608: Right_Hand_SmallFinger_GRP
+    400610: Right_Hand_SmallFinger_Manual_GRP
+    400612: Right_Hand_SmallFinger_Result_GRP
+    400614: Right_Hand_Thumb_1_Auto_JNT
+    400616: Right_Hand_Thumb_1_Manual_JNT
+    400618: Right_Hand_Thumb_1_Result_JNT
+    400620: Right_Hand_Thumb_2_Auto_JNT
+    400622: Right_Hand_Thumb_2_Manual_JNT
+    400624: Right_Hand_Thumb_2_Result_JNT
+    400626: Right_Hand_Thumb_3_Auto_JNT
+    400628: Right_Hand_Thumb_3_Manual_JNT
+    400630: Right_Hand_Thumb_3_Result_JNT
+    400632: Right_Hand_Thumb_Auto_GRP
+    400634: Right_Hand_Thumb_end_Auto_JNT
+    400636: Right_Hand_Thumb_end_Manual_JNT
+    400638: Right_Hand_Thumb_end_Result_JNT
+    400640: Right_Hand_Thumb_GRP
+    400642: Right_Hand_Thumb_Manual_GRP
+    400644: Right_Hand_Thumb_Result_GRP
+    400646: Right_Knee_FK_CTRL
+    400648: Right_Knee_IK_JNT
+    400650: Right_Knee_Result_JNT
+    400652: Right_Leg_BodySpace_LOC
+    400654: Right_Leg_HipSpace_LOC
+    400656: Right_Leg_HipSpace_LOC 1
+    400658: Right_Leg_HipSpace_LOC1
+    400660: Right_Shoulder_Base_JNT
+    400662: Right_Shoulder_CTRL
+    400664: Right_Shoulder_End_JNT
+    400666: Right_Shoulder_GRP
+    400668: Right_Upperarm_FK_CTRL
+    400670: Right_Upperarm_IK_JNT
+    400672: Right_Upperarm_Result_JNT
+    400674: Right_Wrist_FK_CTRL
+    400676: Right_Wrist_IK_JNT
+    400678: Right_Wrist_Result_JNT
+    400680: Settings_GRP
+    400682: Settings_GRP 1
+    400684: Shoulder_bind_JNT
+    400686: Shoulder_CTRL
+    400688: Shoulder_FK_JNT
+    400690: Shoulder_FKconst_GRP
+    400692: Spine1_FK_CTRL
+    400694: Spine1_result_JNT
+    400696: Spine2_FK_CTRL
+    400698: Spine2_result_JNT
+    400700: Spine3_result_JNT
+    400702: Spine4_result_JNT
+    400704: Spine5_result_JNT
+    400706: Spine6_result_JNT
+    400708: Spine_CVR
+    400710: Spine_HDL
+    400712: Toe_LOC
+    400714: Toe_LOC 1
+    400716: Toe_Wiggle_GRP
+    400718: Toe_Wiggle_GRP 1
+    400720: Torso_GRP
+    400722: transform100
+    400724: transform101
+    400726: transform102
+    400728: transform103
+    400730: transform173
+    400732: transform174
+    400734: transform175
+    400736: transform175 1
+    400738: transform177
+    400740: transform178
+    400742: transform178 1
+    2100000: blinn7
+    4300000: perso
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: perso
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
