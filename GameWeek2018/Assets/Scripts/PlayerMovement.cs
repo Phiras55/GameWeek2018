@@ -54,9 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
         currentLane = startingLane;
 
-        lanes[0].localPosition = transform.parent.position - transform.parent.right * strafeDistance;
-        lanes[1].localPosition = transform.parent.position;
-        lanes[2].localPosition = transform.parent.position + transform.parent.right * strafeDistance;
+        lanes[0].localPosition = -Vector3.right * strafeDistance;
+        lanes[1].localPosition = Vector3.zero;
+        lanes[2].localPosition = Vector3.right * strafeDistance;
     }
 
     // Update is called once per frame
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     {
         IncrementSpeed();
 
-        transform.parent.position  = transform.parent.position + (transform.parent.forward.normalized * currentSpeed * Time.deltaTime);
+        transform.parent.position  += transform.parent.forward.normalized * (currentSpeed * Time.deltaTime);
     }
 
     private void IncrementSpeed()
@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
             //transform.position += targetPos;
         }
 
-        Vector3 vec = new Vector3(lanes[lane].position.x, transform.localPosition.y, transform.localPosition.z);
+        Vector3 vec = new Vector3(lanes[lane].localPosition.x, transform.localPosition.y, 0);
 
         transform.localPosition =  Vector3.Lerp(transform.localPosition, vec, strafeSpeed * Time.deltaTime);
        
