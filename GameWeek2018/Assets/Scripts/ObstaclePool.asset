@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolList:
   - name: Pipe_01
-    prefab: {fileID: 1823022873984338, guid: 791f28ee0c76be849b0352c1b266a71e, type: 2}
+    prefab: {fileID: 1845405119567668, guid: 791f28ee0c76be849b0352c1b266a71e, type: 2}
     poolAmount: 10
     canGrow: 1
   - name: Pipe_02
-    prefab: {fileID: 1823022873984338, guid: 791f28ee0c76be849b0352c1b266a71e, type: 2}
+    prefab: {fileID: 1845405119567668, guid: 791f28ee0c76be849b0352c1b266a71e, type: 2}
     poolAmount: 10
     canGrow: 1
