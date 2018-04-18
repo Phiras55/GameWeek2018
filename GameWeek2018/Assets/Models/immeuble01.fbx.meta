@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: 47a87c614fb4bc847a72660020ffbdce
-timeCreated: 1523988023
+guid: 562a1a20165533640b97fbbd74fa01ca
+timeCreated: 1523985989
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: immeuble07
     400000: //RootNode
-    2100000: lambert2
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: immeuble01
-    9500000: //RootNode
+    400002: immeuble07
+    2100000: blanc
+    2300000: immeuble07
+    3300000: immeuble07
+    4300000: immeuble07
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -86,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
