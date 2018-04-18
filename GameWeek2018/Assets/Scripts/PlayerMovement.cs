@@ -23,11 +23,13 @@ public class PlayerMovement : MonoBehaviour
     private float           colStartHeight;
     private int             strafeDir;
 
+
     private bool isGrounded;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravityMultiplier;
 
     private bool isSliding = false;
+    private bool isStrafing = false;
 
     private int currentLane;
     private int startingLane;
@@ -90,13 +92,13 @@ public class PlayerMovement : MonoBehaviour
     {
         targetPos = Vector3.zero;
 
-        if(Input.GetKeyDown(KeyCode.D))
+        if(Input.GetKeyDown(KeyCode.D) && !isStrafing)
         {
             ChangeLane(1);
-            StartCoroutine(Strafing());
-            //transform.position += targetPos;
+            //StartCoroutine(Strafing());
+            transform.position += targetPos;
         }
-        else if(Input.GetKeyDown(KeyCode.A))
+        else if(Input.GetKeyDown(KeyCode.A) && !isStrafing)
         {
             ChangeLane(-1);
             transform.position += targetPos;
@@ -106,12 +108,16 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Strafing()
     {
-        /*Vector3 lastPos = transform.position;
-        while ()
+        isStrafing = true;
+        Vector3 lastPos = transform.position + targetPos;
+        while (Mathf.Pow(Vector3.SqrMagnitude(transform.position - lastPos), 2) < Mathf.Pow(0.1f, 2))
         {
-            transform.position = Vector3.Lerp(transform.position, transform.position + targetPos, strafeSpeed * Time.deltaTime);
-        }*/
-        yield return null;
+            Debug.Log("Strafing");
+            transform.position = Vector3.Lerp(transform.position, lastPos, strafeSpeed * Time.deltaTime);
+            yield return null;
+        }
+        transform.position = lastPos;
+        isStrafing = false;
     }
 
     private void ChangeLane(int direction)
@@ -155,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckGrounded()
     {
-        if (Physics.OverlapSphere(transform.position - (Vector3.up), 0.1f, ~(1 << 8)).Length > 0)
+        if (Physics.OverlapSphere(transform.position - (Vector3.up * transform.localScale.y), 0.1f, ~(1 << 8)).Length > 0)
         {
             isGrounded = true;
         }
