@@ -8,15 +8,17 @@ public class Chunk : MonoBehaviour
     [SerializeField] public Transform exitPoint;
 
     [Header("Obstacles")]
-    [SerializeField] private bool           generateObstacles;
-    [SerializeField] private int            minObstaclesCount;
-    [SerializeField] private int            maxObstaclesCount;
-    [SerializeField] private List<string>   obstaclesID;
+    [SerializeField] private bool generateObstacles;
+    [SerializeField] private int minObstaclesCount;
+    [SerializeField] private int maxObstaclesCount;
+    [SerializeField] private List<string> obstaclesID;
     [Range(0, 100)]
-    [SerializeField] private List<float>    obstacleSpawnChance;
+    [SerializeField] private List<float> obstacleSpawnChance;
 
-	// Use this for initialization
-	void Start ()
+    public string KeyName { get; set; }
+
+    // Use this for initialization
+    void Start ()
     {
 		
 	}
@@ -34,9 +36,10 @@ public class Chunk : MonoBehaviour
 
     public void InitAndPlace(Transform lastChunkExitPoint)
     {
-        Vector3 dirToExit = (lastChunkExitPoint.position - lastChunkExitPoint.root.position).normalized;
+        Vector3 dirToExit   = (lastChunkExitPoint.position - lastChunkExitPoint.parent.position).normalized;
+        Vector3 length      = transform.position - entryPoint.position;
 
-        transform.position = lastChunkExitPoint.position + dirToExit * (entryPoint.position + transform.position).magnitude;
+        transform.position = lastChunkExitPoint.position + dirToExit * length.magnitude;
 
         transform.rotation = Quaternion.LookRotation(dirToExit);
     }

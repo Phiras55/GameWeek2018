@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Name: ChunkPool
   m_EditorClassIdentifier: 
   poolList:
+  - name: StartZone
+    prefab: {fileID: 1292624101750838, guid: 641cf9dd9a9fabb4c9d30184f157976a, type: 2}
+    poolAmount: 1
+    canGrow: 0
   - name: Roof_01
-    prefab: {fileID: 1462674368931946, guid: 035565b76e877064cb86a927f35b617d, type: 2}
+    prefab: {fileID: 1287274193946594, guid: 0792e758b5bbc3142a4fe6706caf47a7, type: 2}
     poolAmount: 3
-    canGrow: 0
+    canGrow: 1
   - name: Roof_02
-    prefab: {fileID: 1835860803355776, guid: edf887fc07226f644bf64b80ce8dd1c1, type: 2}
+    prefab: {fileID: 1789251203456692, guid: c1940d963e570354fab2450ee1a1861a, type: 2}
     poolAmount: 3
-    canGrow: 0
+    canGrow: 1
