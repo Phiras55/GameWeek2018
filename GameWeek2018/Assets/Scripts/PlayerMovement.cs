@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 targetPos;
 
+    [HideInInspector]
+    public bool canMove = true;
+
     // Use this for initialization
     private void Start ()
     {
@@ -51,19 +54,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Physics.OverlapSphere(transform.position - (Vector3.up), 0.1f, ~(1 << 8)).Length > 0)
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
+        //if (Physics.OverlapSphere(transform.position - (Vector3.up), 0.1f, ~(1 << 8)).Length > 0)
+        //{
+        //    isGrounded = true;
+        //}
+        //else
+        //{
+        //    isGrounded = false;
+        //}
+
+        if (!canMove) return;
 
         MovePlayer();
         Strafe();
         Slide();
         Jump();
+    }
+
+    private void FixedUpdate()
+    {
+        CheckGrounded();
     }
 
     private void MovePlayer()
@@ -88,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
     private void Strafe()
     {
         targetPos = Vector3.zero;
+
         if(Input.GetKeyDown(KeyCode.D))
         {
             ChangeLane(1);
@@ -140,15 +151,29 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void CheckGrounded()
+    {
+        if (Physics.OverlapSphere(transform.position - (Vector3.up), 0.1f, ~(1 << 8)).Length > 0)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+
+        if (!isGrounded)
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - gravityMultiplier, rb.velocity.z);
+        else
+            rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+    }
+
     private void Jump()
     {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded && !isSliding)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
         }
-
-        if (!isGrounded)
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - gravityMultiplier, rb.velocity.z);
     }
 
     IEnumerator Sliding()
@@ -163,5 +188,11 @@ public class PlayerMovement : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
         isSliding = false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position - Vector3.up, 0.1f);
     }
 }
