@@ -93,7 +93,8 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.D))
         {
             ChangeLane(1);
-            transform.position += targetPos;
+            StartCoroutine(Strafing());
+            //transform.position += targetPos;
         }
         else if(Input.GetKeyDown(KeyCode.A))
         {
@@ -101,6 +102,16 @@ public class PlayerMovement : MonoBehaviour
             transform.position += targetPos;
         }
        
+    }
+
+    IEnumerator Strafing()
+    {
+        /*Vector3 lastPos = transform.position;
+        while ()
+        {
+            transform.position = Vector3.Lerp(transform.position, transform.position + targetPos, strafeSpeed * Time.deltaTime);
+        }*/
+        yield return null;
     }
 
     private void ChangeLane(int direction)
@@ -184,6 +195,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position - Vector3.up, 0.1f);
+        Gizmos.DrawWireSphere(transform.position - (Vector3.up * transform.localScale.y), 0.1f);
     }
 }
