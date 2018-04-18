@@ -32,9 +32,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isStrafing = false;
 
     private int currentLane;
-    private int startingLane;
+    private int startingLane = 1;
 
     private Vector3 targetPos;
+
+    public Transform[] lanes;
 
     [HideInInspector]
     public bool canMove = true;
@@ -42,16 +44,20 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     private void Start ()
     {
-        col                         = gameObject.GetComponent<CapsuleCollider>();
-        colStartHeight              = col.height;
-        currentLane                 = 0;
+        col                                 = gameObject.GetComponent<CapsuleCollider>();
+        colStartHeight                      = col.height;
+        currentLane                         = 0;
         rb = GetComponent<Rigidbody>();
-        currentSpeed                = initialSpeed;
-        accumulatedTime             = 0;
-        Application.targetFrameRate = 60;
+        currentSpeed                        = initialSpeed;
+        accumulatedTime                     = 0;
+        Application.targetFrameRate         = 60;
 
         currentLane = startingLane;
-	}
+
+        lanes[0].localPosition = -Vector3.right * strafeDistance;
+        lanes[1].localPosition = Vector3.zero;
+        lanes[2].localPosition = Vector3.right * strafeDistance;
+    }
 
     // Update is called once per frame
     private void Update()
@@ -73,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     {
         IncrementSpeed();
 
-        transform.position  = transform.position + transform.forward.normalized * currentSpeed * Time.deltaTime;
+        transform.parent.position  += transform.parent.forward.normalized * (currentSpeed * Time.deltaTime);
     }
 
     private void IncrementSpeed()
@@ -90,55 +96,50 @@ public class PlayerMovement : MonoBehaviour
 
     private void Strafe()
     {
-        targetPos = Vector3.zero;
+        //targetPos = Vector3.zero;
+
+        int lane = currentLane;
 
         if(Input.GetKeyDown(KeyCode.D) && !isStrafing)
         {
-            ChangeLane(1);
-            //StartCoroutine(Strafing());
-            transform.position += targetPos;
+            lane = ChangeLane(1);
+            //transform.position += targetPos;
         }
         else if(Input.GetKeyDown(KeyCode.A) && !isStrafing)
         {
-            ChangeLane(-1);
-            transform.position += targetPos;
+            lane = ChangeLane(-1);
+            //transform.position += targetPos;
         }
+
+        Vector3 vec = new Vector3(lanes[lane].localPosition.x, transform.localPosition.y, 0);
+
+        transform.localPosition =  Vector3.Lerp(transform.localPosition, vec, strafeSpeed * Time.deltaTime);
        
     }
 
-    IEnumerator Strafing()
-    {
-        isStrafing = true;
-        Vector3 lastPos = transform.position + targetPos;
-        while (Mathf.Pow(Vector3.SqrMagnitude(transform.position - lastPos), 2) < Mathf.Pow(0.1f, 2))
-        {
-            Debug.Log("Strafing");
-            transform.position = Vector3.Lerp(transform.position, lastPos, strafeSpeed * Time.deltaTime);
-            yield return null;
-        }
-        transform.position = lastPos;
-        isStrafing = false;
-    }
-
-    private void ChangeLane(int direction)
+    private int ChangeLane(int direction)
     {
         int targetLane = currentLane + direction;
 
         if (targetLane < 0 || targetLane > 2)
-            return;
+            return currentLane;
 
         currentLane = targetLane;
 
-        Vector3 deltapos = new Vector3((currentLane - 1), 0, 0);
+        //Vector3 deltapos = new Vector3((currentLane - 1), 0, 0);
 
-        if (deltapos.x == 0 && direction == 1)
+        /*if (deltapos.x == 0 && direction == 1)
             deltapos.x = 1;
         else if (deltapos.x == 0 && direction == -1)
-            deltapos.x = -1;
+            deltapos.x = -1;*/
 
-        targetPos = transform.rotation * deltapos * strafeDistance;
+        //targetPos = transform.rotation * deltapos * strafeDistance;
 
-        Debug.Log(targetPos);
+        //targetPos = deltapos;
+
+        return currentLane;
+
+        //Debug.Log(targetPos);
     }
 
     private void Slide()
