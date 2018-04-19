@@ -24,6 +24,8 @@ public class WorldCreator : MonoBehaviour
     private int                         currentChunkIndex;
     private Vector3                     direction;
 
+    private float                       timeTest = 0;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -36,13 +38,11 @@ public class WorldCreator : MonoBehaviour
         startZone.KeyName               = nameOfStartChunk;
         startZone.transform.position    = Vector3.zero;
 
-        if (!startZone.gameObject.activeSelf)
-            startZone.gameObject.SetActive(true);
-
-        loadedChunks.Add(startZone);
-
         player = Instantiate(playerPrefab);
-        player.transform.position = startZone.spawnPoint.position;
+        //player.dieEvent.AddListener(RestartWorld);
+
+
+        InitializeWorld();
     }
 	
 	// Update is called once per frame
@@ -66,6 +66,13 @@ public class WorldCreator : MonoBehaviour
         {
             MoveWorld();
         }
+
+        timeTest += Time.deltaTime;
+        if (timeTest >= 7)
+        {
+            timeTest = 0;
+            RestartWorld();
+        }
 	}
 
     private void GenerateChunk()
@@ -86,7 +93,7 @@ public class WorldCreator : MonoBehaviour
         loadedChunks.Add(generatedChunk);
     }
 
-    private void UnloadChunk()
+    private void UnloadChunk(int id = 0)
     {
         if(startZone.gameObject.activeSelf)
         {
@@ -95,9 +102,9 @@ public class WorldCreator : MonoBehaviour
         }
         else
         {
-            Chunk currentChunk = loadedChunks[0];
+            Chunk currentChunk = loadedChunks[id];
             chunkManager.BackToPoolQueue(currentChunk.KeyName, currentChunk.gameObject);
-            loadedChunks.RemoveAt(0);
+            loadedChunks.RemoveAt(id);
         }
     }
 
@@ -114,13 +121,41 @@ public class WorldCreator : MonoBehaviour
         }
     }
 
-    private void UnloadAll()
+    private void UnloadAllChunks()
     {
-
+        int chunkCount = loadedChunks.Count;
+        for (int i = 0; i < chunkCount; ++i)
+        {
+            UnloadChunk();
+        }
     }
 
-    private void RestartRun()
+    private void UnloadPlayer()
     {
+        player.gameObject.SetActive(false);
+        player.transform.position = Vector3.zero;
+    }
 
+    private void InitializeWorld()
+    {
+        startZone.transform.position = Vector3.zero;
+
+        if (!startZone.gameObject.activeSelf)
+            startZone.gameObject.SetActive(true);
+
+        loadedChunks.Add(startZone);
+
+        player.transform.position = startZone.spawnPoint.position;
+
+        if (!player.activeSelf)
+            player.SetActive(true);
+    }
+
+    private void RestartWorld()
+    {
+        UnloadAllChunks();
+        UnloadPlayer();
+
+        InitializeWorld();
     }
 }
