@@ -5,18 +5,24 @@ using UnityEngine;
 public class WorldCreator : MonoBehaviour
 {
     [Header("World Parameters")]
-    [SerializeField] private int    chunkViewDistance;
-    [SerializeField] private int    chunkRandomStartIndex;
-    [SerializeField] private int    chunkRandomEndIndex;
+    [SerializeField] private int        chunkViewDistance;
+    [SerializeField] private int        chunkRandomStartIndex;
+    [SerializeField] private int        chunkRandomEndIndex;
+    [SerializeField] private float      unloadDistance;
+    [SerializeField] private float      loadDistance;
+    [SerializeField] private float      moveWorldMaxDistance;
 
     [Header("Start Zone")]
-    [SerializeField] private string nameOfStartChunk;
+    [SerializeField] private string     nameOfStartChunk;
+    [SerializeField] private GameObject playerPrefab;
 
-    private GameObject          player;
-    private List<Chunk>         loadedChunks;
-    private ObjectPooler        chunkManager;
-    private ObjectPooler        obstacleManager;
-    private int                 currentChunkIndex;
+    private List<Chunk>                 loadedChunks;
+    private Chunk                       startZone;
+    private ObjectPooler                chunkManager;
+    private ObjectPooler                obstacleManager;
+    private GameObject                  player;
+    private int                         currentChunkIndex;
+    private Vector3                     direction;
 
 	// Use this for initialization
 	void Start ()
@@ -25,36 +31,42 @@ public class WorldCreator : MonoBehaviour
         obstacleManager     = GameObject.FindGameObjectWithTag("ObstacleManager").GetComponent<ObjectPooler>();
         loadedChunks        = new List<Chunk>();
         currentChunkIndex   = 0;
-        player              = GameObject.FindGameObjectWithTag("Player");
 
-        Chunk startChunk                = chunkManager.GetPoolInstance(nameOfStartChunk).GetComponent<Chunk>();
-        startChunk.KeyName              = nameOfStartChunk;
-        startChunk.transform.position   = Vector3.zero;
+        startZone                       = chunkManager.GetPoolInstance(nameOfStartChunk).GetComponent<Chunk>();
+        startZone.KeyName               = nameOfStartChunk;
+        startZone.transform.position    = Vector3.zero;
 
-        if (!startChunk.gameObject.activeSelf)
-            startChunk.gameObject.SetActive(true);
+        if (!startZone.gameObject.activeSelf)
+            startZone.gameObject.SetActive(true);
 
-        loadedChunks.Add(startChunk);
+        loadedChunks.Add(startZone);
 
-        //StartCoroutine(SpawnThings());
+        player = Instantiate(playerPrefab);
+        player.transform.position = startZone.spawnPoint.position;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        direction = player.transform.position - loadedChunks[0].transform.position;
+		if(direction.sqrMagnitude >= unloadDistance * unloadDistance)
+        {
+            UnloadChunk();
+        }
 
-    //IEnumerator SpawnThings()
-    //{
-    //    while (true)
-    //    {
-    //        GenerateChunk();
-    //        if(loadedChunks.Count > 3)
-    //            UnloadChunk();
-    //        yield return new WaitForSeconds(1);
-    //    }
-    //}
+        direction = player.transform.position - loadedChunks[loadedChunks.Count - 1].transform.position;
+        if (direction.sqrMagnitude <= loadDistance * loadDistance)
+        {
+            GenerateChunk();
+        }
+
+        direction = Vector3.zero - player.transform.position;
+        direction.y = 0;
+        if (direction.sqrMagnitude >= moveWorldMaxDistance * moveWorldMaxDistance)
+        {
+            MoveWorld();
+        }
+	}
 
     private void GenerateChunk()
     {
@@ -76,8 +88,39 @@ public class WorldCreator : MonoBehaviour
 
     private void UnloadChunk()
     {
-        Chunk currentChunk = loadedChunks[0];
-        chunkManager.BackToPoolQueue(currentChunk.KeyName, currentChunk.gameObject);
-        loadedChunks.RemoveAt(0);
+        if(startZone.gameObject.activeSelf)
+        {
+            startZone.gameObject.SetActive(false);
+            loadedChunks.RemoveAt(0);
+        }
+        else
+        {
+            Chunk currentChunk = loadedChunks[0];
+            chunkManager.BackToPoolQueue(currentChunk.KeyName, currentChunk.gameObject);
+            loadedChunks.RemoveAt(0);
+        }
+    }
+
+    void MoveWorld()
+    {
+        Vector3 normalizedDirection = direction.normalized;
+        Vector3 movementToTeleport = normalizedDirection * moveWorldMaxDistance;
+
+        player.transform.position += movementToTeleport;
+
+        foreach(Chunk c in loadedChunks)
+        {
+            c.transform.position += movementToTeleport;
+        }
+    }
+
+    private void UnloadAll()
+    {
+
+    }
+
+    private void RestartRun()
+    {
+
     }
 }

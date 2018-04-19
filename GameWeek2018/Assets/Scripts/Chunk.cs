@@ -4,16 +4,9 @@ using UnityEngine;
 public class Chunk : MonoBehaviour
 {
     [Header("Entry and Exit Points")]
-    [SerializeField] private Transform entryPoint;
-    [SerializeField] public Transform exitPoint;
-
-    [Header("Obstacles")]
-    [SerializeField] private bool generateObstacles;
-    [SerializeField] private int minObstaclesCount;
-    [SerializeField] private int maxObstaclesCount;
-    [SerializeField] private List<string> obstaclesID;
-    [Range(0, 100)]
-    [SerializeField] private List<float> obstacleSpawnChance;
+    [SerializeField] private Transform  entryPoint;
+    [SerializeField] public Transform   exitPoint;
+    [SerializeField] public Transform  spawnPoint;
 
     public string KeyName { get; set; }
 

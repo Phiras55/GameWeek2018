@@ -173,7 +173,12 @@ MonoBehaviour:
   chunkViewDistance: 0
   chunkRandomStartIndex: 1
   chunkRandomEndIndex: 2
+  unloadDistance: 100
+  loadDistance: 1000
+  moveWorldMaxDistance: 200
   nameOfStartChunk: StartZone
+  playerPrefab: {fileID: 1633432717586938, guid: bbed6f8ed82499446adae3e0095bde3d,
+    type: 2}
 --- !u!4 &555676577
 Transform:
   m_ObjectHideFlags: 0

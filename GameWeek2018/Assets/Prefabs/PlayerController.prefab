@@ -310,8 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3d6debbf9ea674a8822ef569451250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSpeed: 50
-  speedIncrement: 0.05
+  initialSpeed: 100
+  speedIncrement: 0
   incrementIntervalTime: 0
   maxSpeed: 100
   strafeDistance: 3

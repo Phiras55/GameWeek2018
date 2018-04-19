@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolList:
   - name: StartZone
-    prefab: {fileID: 1292624101750838, guid: 641cf9dd9a9fabb4c9d30184f157976a, type: 2}
+    prefab: {fileID: 1554926453423938, guid: 641cf9dd9a9fabb4c9d30184f157976a, type: 2}
     poolAmount: 1
     canGrow: 0
   - name: Roof_01
