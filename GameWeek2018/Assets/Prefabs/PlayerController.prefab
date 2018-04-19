@@ -283,7 +283,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 2
-  m_Constraints: 112
+  m_Constraints: 114
   m_CollisionDetection: 2
 --- !u!81 &81684585821171256
 AudioListener:
@@ -310,10 +310,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3d6debbf9ea674a8822ef569451250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSpeed: 100
+  initialSpeed: 5
   speedIncrement: 0
   incrementIntervalTime: 0
-  maxSpeed: 100
+  maxSpeed: 5
   strafeDistance: 3
   strafeSpeed: 5
   colMinHeight: 0

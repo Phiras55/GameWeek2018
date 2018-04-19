@@ -29,11 +29,20 @@ public class Chunk : MonoBehaviour
 
     public void InitAndPlace(Transform lastChunkExitPoint)
     {
-        Vector3 dirToExit   = (lastChunkExitPoint.position - lastChunkExitPoint.parent.position).normalized;
+        Vector3 dirToExit   = (lastChunkExitPoint.position - lastChunkExitPoint.parent.position);
+        dirToExit.y = 0;
+        dirToExit.x = 0;
+        dirToExit   = dirToExit.normalized;
+
         Vector3 length      = transform.position - entryPoint.position;
+        length.y    = 0;
+        length.x    = 0;
 
-        transform.position = lastChunkExitPoint.position + dirToExit * length.magnitude;
+        Vector3 lastChunkExitPointNoY = lastChunkExitPoint.position;
+        lastChunkExitPointNoY.y = 0;
 
-        transform.rotation = Quaternion.LookRotation(dirToExit);
+        transform.position = lastChunkExitPointNoY + dirToExit * length.magnitude;
+
+        //transform.rotation = Quaternion.LookRotation(dirToExit);
     }
 }

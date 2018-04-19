@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,15 +7,25 @@ public class WorldCreator : MonoBehaviour
 {
     [Header("World Parameters")]
     [SerializeField] private int        chunkViewDistance;
-    [SerializeField] private int        chunkRandomStartIndex;
-    [SerializeField] private int        chunkRandomEndIndex;
     [SerializeField] private float      unloadDistance;
     [SerializeField] private float      loadDistance;
     [SerializeField] private float      moveWorldMaxDistance;
 
+    [Header("Chunk Difficulty")]
+    [SerializeField] private int        easyChunkStart;
+    [SerializeField] private int        easyChunkEnd;
+    [SerializeField] private int        mediumChunkStart;
+    [SerializeField] private int        mediumChunkEnd;
+    [SerializeField] private int        hardChunkStart;
+    [SerializeField] private int        hardChunkEnd;
+
     [Header("Start Zone")]
     [SerializeField] private string     nameOfStartChunk;
     [SerializeField] private GameObject playerPrefab;
+
+    [Header("Chunk Spawn Chance")]
+    [SerializeField] private int[]      chunkTreshold;
+    [SerializeField] private Vector3[]  chunkSpawnChance;
 
     private List<Chunk>                 loadedChunks;
     private Chunk                       startZone;
@@ -32,7 +43,6 @@ public class WorldCreator : MonoBehaviour
         chunkManager        = GameObject.FindGameObjectWithTag("ChunkManager").GetComponent<ObjectPooler>();
         obstacleManager     = GameObject.FindGameObjectWithTag("ObstacleManager").GetComponent<ObjectPooler>();
         loadedChunks        = new List<Chunk>();
-        currentChunkIndex   = 0;
 
         startZone                       = chunkManager.GetPoolInstance(nameOfStartChunk).GetComponent<Chunk>();
         startZone.KeyName               = nameOfStartChunk;
@@ -66,31 +76,79 @@ public class WorldCreator : MonoBehaviour
         {
             MoveWorld();
         }
-
-        timeTest += Time.deltaTime;
-        if (timeTest >= 7)
-        {
-            timeTest = 0;
-            RestartWorld();
-        }
 	}
 
     private void GenerateChunk()
     {
         Chunk generatedChunk;
-        int randInt     = Random.Range(chunkRandomStartIndex, chunkRandomEndIndex + 1);
+        int randInt     = GetRandomChunkIndexFromCurrentChunk();
         string tempName = chunkManager.pool.poolList[randInt].name;
 
         generatedChunk = chunkManager.GetPoolInstance(tempName).GetComponent<Chunk>();
 
-        generatedChunk.transform.position = Vector3.zero;
-        generatedChunk.KeyName = tempName;
+        generatedChunk.transform.position   = Vector3.zero;
+        generatedChunk.KeyName              = tempName;
         generatedChunk.InitAndPlace(loadedChunks[loadedChunks.Count - 1].exitPoint.transform);
 
         if (!generatedChunk.gameObject.activeSelf)
             generatedChunk.gameObject.SetActive(true);
 
+        ++currentChunkIndex;
         loadedChunks.Add(generatedChunk);
+    }
+
+    private int GetRandomChunkIndexFromCurrentChunk()
+    {
+        int minIndex = 0, maxIndex = 0, chunkTresholdIndex = -1;
+
+        for(int index = 0; index < chunkTreshold.Length; ++index)
+        {
+            if (currentChunkIndex >= chunkTreshold[index])
+                ++chunkTresholdIndex;
+
+            else
+                break;
+        }
+        
+        float   rolledChance                    = 0;
+        float[] currentSortedChunkSpawnChance   = GetSortedVector3(chunkSpawnChance[chunkTresholdIndex]);
+
+        foreach(float v in currentSortedChunkSpawnChance)
+        {
+            rolledChance = UnityEngine.Random.Range(0f, 1f);
+            if (v == 0)
+                continue;
+            else if(rolledChance <= v)
+            {
+                if(chunkSpawnChance[chunkTresholdIndex].y == v)
+                {
+                    minIndex = mediumChunkStart;
+                    maxIndex = mediumChunkEnd;
+                    break;
+                }
+                else if(chunkSpawnChance[chunkTresholdIndex].z == v)
+                {
+                    minIndex = hardChunkStart;
+                    maxIndex = hardChunkEnd;
+                    break;
+                }
+                else
+                {
+                    minIndex = easyChunkStart;
+                    maxIndex = easyChunkEnd;
+                    break;
+                }
+            }
+        }
+
+        return UnityEngine.Random.Range(minIndex, maxIndex + 1);
+    }
+
+    private float[] GetSortedVector3(Vector3 v)
+    {
+        float[] result = new float[] { v.x, v.y, v.z };
+        Array.Sort(result);
+        return result;
     }
 
     private void UnloadChunk(int id = 0)
@@ -138,6 +196,8 @@ public class WorldCreator : MonoBehaviour
 
     private void InitializeWorld()
     {
+        currentChunkIndex = 0;
+
         startZone.transform.position = Vector3.zero;
 
         if (!startZone.gameObject.activeSelf)
