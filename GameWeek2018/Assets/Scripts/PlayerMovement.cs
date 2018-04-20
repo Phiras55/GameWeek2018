@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void LookObstacle()
     {
-        if(Physics.Raycast(transform.position + (transform.forward * 0.5f) + Vector3.up, transform.forward, out hit, currentSpeed / 2,~(1<<8), QueryTriggerInteraction.Ignore ))
+        if(Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, currentSpeed / 2.5f ,~(1<<8), QueryTriggerInteraction.Ignore ))
         {
             if(hit.collider.gameObject.CompareTag("Obstacle"))
             {
@@ -130,12 +130,12 @@ public class PlayerMovement : MonoBehaviour
 
         int lane = currentLane;
 
-        if(Input.GetKeyDown(KeyCode.D) && !isStrafing)
+        if(Input.GetKeyDown(KeyCode.D))
         {
             lane = ChangeLane(1);
             //transform.position += targetPos;
         }
-        else if(Input.GetKeyDown(KeyCode.A) && !isStrafing)
+        else if(Input.GetKeyDown(KeyCode.A))
         {
             lane = ChangeLane(-1);
             //transform.position += targetPos;
@@ -295,7 +295,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Activating()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.25f);
 
         if (!rb.useGravity)
             rb.useGravity = true;
@@ -339,6 +339,6 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position - ((Vector3.up * groundOffset) * transform.localScale.y), 0.1f);
 
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position + (transform.forward * 0.5f) + Vector3.up, (transform.position + Vector3.up) + (transform.forward * currentSpeed / 2));
+        Gizmos.DrawLine(transform.position + Vector3.up, (transform.position + Vector3.up) + (transform.forward * currentSpeed / 2.5f));
     }
 }
