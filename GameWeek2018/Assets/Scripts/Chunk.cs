@@ -22,11 +22,6 @@ public class Chunk : MonoBehaviour
 		
 	}
 
-    private void SpawnObstacles()
-    {
-
-    }
-
     public void InitAndPlace(Transform lastChunkExitPoint)
     {
         Vector3 dirToExit   = (lastChunkExitPoint.position - lastChunkExitPoint.parent.position);

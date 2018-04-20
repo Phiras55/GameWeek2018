@@ -2756,8 +2756,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entryPoint: {fileID: 4575585257548596}
   exitPoint: {fileID: 4170593899662616}
-  generateObstacles: 0
-  minObstaclesCount: 0
-  maxObstaclesCount: 0
-  obstaclesID: []
-  obstacleSpawnChance: []
+  spawnPoint: {fileID: 0}

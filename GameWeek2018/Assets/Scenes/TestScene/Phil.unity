@@ -170,22 +170,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkViewDistance: 0
-  unloadDistance: 50
-  loadDistance: 50
+  unloadDistance: 100
+  loadDistance: 100
   moveWorldMaxDistance: 200
   easyChunkStart: 2
-  easyChunkEnd: 4
-  mediumChunkStart: 0
-  mediumChunkEnd: 0
+  easyChunkEnd: 9
+  mediumChunkStart: 10
+  mediumChunkEnd: 10
   hardChunkStart: 0
   hardChunkEnd: 0
   nameOfStartChunk: StartZone
-  playerPrefab: {fileID: 1420426281272968, guid: bbed6f8ed82499446adae3e0095bde3d,
+  playerPrefab: {fileID: 1130570818453098, guid: 36f2824100015744cb3ed64d254c090b,
     type: 2}
-  chunkTreshold: 000000000a00000014000000
+  chunkTreshold: 000000006400000064000000
   chunkSpawnChance:
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 0.5, z: 0}
+  - {x: 0, y: 0, z: 0}
   - {x: 1, y: 0, z: 0}
 --- !u!4 &555676577
 Transform:
@@ -266,47 +266,6 @@ Transform:
   m_Father: {fileID: 1927874026}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1806059630
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1806059631}
-  - component: {fileID: 1806059632}
-  m_Layer: 0
-  m_Name: ObstacleManager
-  m_TagString: ObstacleManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1806059631
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1806059630}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1806059632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1806059630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cbe003dfa4433945bddc4e7bf0f3ec1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool: {fileID: 11400000, guid: 20b81c6248951ce4d91229a30543035b, type: 2}
 --- !u!1 &1927874025
 GameObject:
   m_ObjectHideFlags: 0

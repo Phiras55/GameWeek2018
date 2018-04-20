@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(isSliding);
+        //Debug.Log(isSliding);
 
         LookObstacle();
     }

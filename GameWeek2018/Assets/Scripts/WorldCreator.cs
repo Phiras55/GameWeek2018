@@ -79,7 +79,9 @@ public class WorldCreator : MonoBehaviour
     {
         Chunk generatedChunk;
         int randInt     = GetRandomChunkIndexFromCurrentChunk();
+        Debug.Log("Random gen " + GetRandomChunkIndexFromCurrentChunk());
         string tempName = chunkManager.pool.poolList[randInt].name;
+        Debug.Log("List size " + chunkManager.pool.poolList.Count);
 
         generatedChunk = chunkManager.GetPoolInstance(tempName).GetComponent<Chunk>();
 
