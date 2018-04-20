@@ -279,7 +279,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.isKinematic = true;
                 col.enabled = false;
 
-                transform.position = Vector3.Lerp(transform.position, topHit.point, Mathf.Max(currentSpeed / 3, 15) * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, topHit.point + (topHit.normal), Mathf.Max(currentSpeed / 3, 15) * Time.deltaTime);
             }
         }
 
@@ -296,7 +296,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Activating()
     {
-        yield return new WaitForSeconds(0.12f);
+        yield return new WaitForSeconds(0.2f);
 
         if (!rb.useGravity)
             rb.useGravity = true;
