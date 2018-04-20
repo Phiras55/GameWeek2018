@@ -170,17 +170,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkViewDistance: 0
-  unloadDistance: 50
-  loadDistance: 50
+  unloadDistance: 100
+  loadDistance: 100
   moveWorldMaxDistance: 200
   easyChunkStart: 2
-  easyChunkEnd: 4
-  mediumChunkStart: 0
-  mediumChunkEnd: 0
+  easyChunkEnd: 9
+  mediumChunkStart: 10
+  mediumChunkEnd: 10
   hardChunkStart: 0
   hardChunkEnd: 0
   nameOfStartChunk: StartZone
-  playerPrefab: {fileID: 1420426281272968, guid: bbed6f8ed82499446adae3e0095bde3d,
+  playerPrefab: {fileID: 1130570818453098, guid: 36f2824100015744cb3ed64d254c090b,
     type: 2}
   chunkTreshold: 000000000a00000014000000
   chunkSpawnChance:
