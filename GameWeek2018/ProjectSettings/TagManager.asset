@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ChunkManager
   - ObstacleManager
+  - Obstacle
   layers:
   - Default
   - TransparentFX
