@@ -30,7 +30,6 @@ public class WorldCreator : MonoBehaviour
     private List<Chunk>                 loadedChunks;
     private Chunk                       startZone;
     private ObjectPooler                chunkManager;
-    private ObjectPooler                obstacleManager;
     private GameObject                  player;
     private int                         currentChunkIndex;
     private Vector3                     direction;
@@ -41,7 +40,6 @@ public class WorldCreator : MonoBehaviour
 	void Start ()
     {
         chunkManager        = GameObject.FindGameObjectWithTag("ChunkManager").GetComponent<ObjectPooler>();
-        obstacleManager     = GameObject.FindGameObjectWithTag("ObstacleManager").GetComponent<ObjectPooler>();
         loadedChunks        = new List<Chunk>();
 
         startZone                       = chunkManager.GetPoolInstance(nameOfStartChunk).GetComponent<Chunk>();
@@ -50,7 +48,6 @@ public class WorldCreator : MonoBehaviour
 
         player = Instantiate(playerPrefab);
         //player.dieEvent.AddListener(RestartWorld);
-
 
         InitializeWorld();
     }

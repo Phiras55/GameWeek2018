@@ -75,12 +75,6 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(isSliding);
 
         LookObstacle();
-
-        MovePlayer();
-        Strafe();
-        Slide();
-        Jump();
-        Climb();
     }
 
     private void LookObstacle()
@@ -101,6 +95,11 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         CheckGrounded();
+        MovePlayer();
+        Strafe();
+        Slide();
+        Jump();
+        Climb();
     }
 
     private void MovePlayer()
