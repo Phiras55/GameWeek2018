@@ -1,12 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Chunk : MonoBehaviour
 {
-    [SerializeField] private Transform entryPoint;
-    [SerializeField] private Transform exitPoint;
+    [Header("Entry and Exit Points")]
+    [SerializeField] private Transform  entryPoint;
+    [SerializeField] public Transform   exitPoint;
+    [SerializeField] public Transform  spawnPoint;
 
-	// Use this for initialization
-	void Start ()
+    public string KeyName { get; set; }
+
+    // Use this for initialization
+    void Start ()
     {
 		
 	}
@@ -16,4 +21,28 @@ public class Chunk : MonoBehaviour
     {
 		
 	}
+
+    private void SpawnObstacles()
+    {
+
+    }
+
+    public void InitAndPlace(Transform lastChunkExitPoint)
+    {
+        Vector3 dirToExit   = (lastChunkExitPoint.position - lastChunkExitPoint.parent.position);
+        dirToExit.y = 0;
+        dirToExit.x = 0;
+        dirToExit   = dirToExit.normalized;
+
+        Vector3 length      = transform.position - entryPoint.position;
+        length.y    = 0;
+        length.x    = 0;
+
+        Vector3 lastChunkExitPointNoY = lastChunkExitPoint.position;
+        lastChunkExitPointNoY.y = 0;
+
+        transform.position = lastChunkExitPointNoY + dirToExit * length.magnitude;
+
+        //transform.rotation = Quaternion.LookRotation(dirToExit);
+    }
 }

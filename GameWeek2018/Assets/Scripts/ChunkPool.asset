@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5a4d4303317ef4481cb0bc76969a25, type: 3}
+  m_Name: ChunkPool
+  m_EditorClassIdentifier: 
+  poolList:
+  - name: StartZone
+    prefab: {fileID: 1412240204804138, guid: 5950f54ff2779904695ce841f38e8016, type: 2}
+    poolAmount: 1
+    canGrow: 0
+  - name: SafeZone
+    prefab: {fileID: 1412240204804138, guid: 5950f54ff2779904695ce841f38e8016, type: 2}
+    poolAmount: 3
+    canGrow: 1
+  - name: Easy_Roof_01
+    prefab: {fileID: 1316972188502050, guid: 952c30e48179a9e42a6cefbeb1a04765, type: 2}
+    poolAmount: 3
+    canGrow: 1
+  - name: Easy_Roof_02
+    prefab: {fileID: 1011086290478404, guid: 82497970802a5d6459aef61dd7ba8754, type: 2}
+    poolAmount: 3
+    canGrow: 1
+  - name: Easy_Roof_03
+    prefab: {fileID: 1859450446847846, guid: d2551dbb24f993c469e988e6685795d1, type: 2}
+    poolAmount: 3
+    canGrow: 1

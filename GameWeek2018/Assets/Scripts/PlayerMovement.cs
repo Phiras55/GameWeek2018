@@ -100,6 +100,11 @@ public class PlayerMovement : MonoBehaviour
         Jump();
         Climb();
         CheckGrounded();
+        MovePlayer();
+        Strafe();
+        Slide();
+        Jump();
+        Climb();
     }
 
     private void MovePlayer()
