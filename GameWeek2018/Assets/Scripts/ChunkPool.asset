@@ -13,14 +13,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolList:
   - name: StartZone
-    prefab: {fileID: 1292624101750838, guid: 641cf9dd9a9fabb4c9d30184f157976a, type: 2}
+    prefab: {fileID: 1412240204804138, guid: 5950f54ff2779904695ce841f38e8016, type: 2}
     poolAmount: 1
     canGrow: 0
-  - name: Roof_01
-    prefab: {fileID: 1287274193946594, guid: 0792e758b5bbc3142a4fe6706caf47a7, type: 2}
+  - name: SafeZone
+    prefab: {fileID: 1412240204804138, guid: 5950f54ff2779904695ce841f38e8016, type: 2}
     poolAmount: 3
     canGrow: 1
-  - name: Roof_02
-    prefab: {fileID: 1789251203456692, guid: c1940d963e570354fab2450ee1a1861a, type: 2}
+  - name: Easy_Roof_01
+    prefab: {fileID: 1316972188502050, guid: 952c30e48179a9e42a6cefbeb1a04765, type: 2}
+    poolAmount: 3
+    canGrow: 1
+  - name: Easy_Roof_02
+    prefab: {fileID: 1011086290478404, guid: 82497970802a5d6459aef61dd7ba8754, type: 2}
+    poolAmount: 3
+    canGrow: 1
+  - name: Easy_Roof_03
+    prefab: {fileID: 1859450446847846, guid: d2551dbb24f993c469e988e6685795d1, type: 2}
     poolAmount: 3
     canGrow: 1
