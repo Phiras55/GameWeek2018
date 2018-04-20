@@ -805,7 +805,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.8260514
+      - time: 0.49886245
         functionName: SetClimbFalse
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: ab3d6debbf9ea674a8822ef569451250,

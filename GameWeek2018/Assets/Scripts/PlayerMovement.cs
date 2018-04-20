@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void LookObstacle()
     {
-        if(Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, currentSpeed / 2,~(1<<8), QueryTriggerInteraction.Ignore ))
+        if(Physics.Raycast(transform.position + (transform.forward * 0.5f) + Vector3.up, transform.forward, out hit, currentSpeed / 2,~(1<<8), QueryTriggerInteraction.Ignore ))
         {
             if(hit.collider.gameObject.CompareTag("Obstacle"))
             {
@@ -94,6 +94,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        MovePlayer();
+        Strafe();
+        Slide();
+        Jump();
+        Climb();
         CheckGrounded();
         MovePlayer();
         Strafe();
@@ -278,7 +283,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.isKinematic = true;
                 col.enabled = false;
 
-                transform.position = Vector3.Lerp(transform.position, topHit.point + (topHit.normal), Mathf.Max(currentSpeed / 3, 15) * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, topHit.point + (topHit.normal * 10f), 2f * Time.deltaTime);
             }
         }
 
@@ -305,6 +310,8 @@ public class PlayerMovement : MonoBehaviour
             col.enabled = true;
 
         currentObstacle = null;
+
+        rb.AddForce(Vector3.up * 3f, ForceMode.VelocityChange);
     }
 
     IEnumerator Sliding()
@@ -337,6 +344,6 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position - ((Vector3.up * groundOffset) * transform.localScale.y), 0.1f);
 
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position + Vector3.up, (transform.position + Vector3.up) + (transform.forward * currentSpeed / 2));
+        Gizmos.DrawLine(transform.position + (transform.forward * 0.5f) + Vector3.up, (transform.position + Vector3.up) + (transform.forward * currentSpeed / 2));
     }
 }

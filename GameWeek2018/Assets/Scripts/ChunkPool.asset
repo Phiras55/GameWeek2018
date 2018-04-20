@@ -37,7 +37,7 @@ MonoBehaviour:
     poolAmount: 3
     canGrow: 1
   - name: Easy_Roof_05
-    prefab: {fileID: 1749254078516272, guid: d1a485bb18a91184c9e97c9be4c80578, type: 2}
+    prefab: {fileID: 1739576450029492, guid: d1a485bb18a91184c9e97c9be4c80578, type: 2}
     poolAmount: 3
     canGrow: 1
   - name: Easy_Roof_06
@@ -45,7 +45,7 @@ MonoBehaviour:
     poolAmount: 3
     canGrow: 1
   - name: Easy_Roof_07
-    prefab: {fileID: 1818994237411010, guid: a09d7f0c7a6812144883e8dc1b142ef1, type: 2}
+    prefab: {fileID: 1484751783807052, guid: a09d7f0c7a6812144883e8dc1b142ef1, type: 2}
     poolAmount: 3
     canGrow: 1
   - name: Medium_Roof_01

@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: a09d7f0c7a6812144883e8dc1b142ef1
+<<<<<<< HEAD
 timeCreated: 1524189262
 licenseType: Free
+=======
+timeCreated: 1524191624
+licenseType: Pro
+>>>>>>> playerMovement
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 100100000
