@@ -1,8 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Obstacle : MonoBehaviour {
+
+    [Flags] public enum E_ObsType
+    {
+        Normal  = 0,
+        Slide   = 1,
+        Climb   = 2
+
+    }
+
+    public E_ObsType obsType;
 
 	// Use this for initialization
 	void Start () {
